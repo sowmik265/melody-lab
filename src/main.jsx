@@ -6,11 +6,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import ErrorPage from './Utilitites/ErrorPage.jsx';
+import SignIn from './SignIn&SignUp/SignIn.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App></App>
+    // errorElement: <ErrorPage></ErrorPage>,
+    element: <App></App>,
+    children: [
+      {
+        path: 'signin',
+        element: <SignIn></SignIn>
+      }
+    ]
   },
 ]);
 

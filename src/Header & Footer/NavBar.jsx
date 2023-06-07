@@ -4,6 +4,7 @@ import {GiMusicalKeyboard} from 'react-icons/gi';
 
 const navTool = <>
     <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
+    <li className='font-extrabold'><ActiveLink to='/signin'>Log in</ActiveLink></li>
 
 
     {/* {
