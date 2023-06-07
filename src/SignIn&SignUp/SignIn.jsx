@@ -2,8 +2,10 @@ import React from 'react';
 import Lottie from 'lottie-react';
 import LoginAnimation from '../../public/LoginAnimation.json';
 import { NavLink } from 'react-router-dom';
+import { useForm } from "react-hook-form";
 
 const SignIn = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col md:flex-row-reverse">
@@ -91,7 +93,7 @@ const SignIn = () => {
                     <div className="mt-4 text-gray-300">
                         Don't have an account?{" "}
                         <span>
-                            <NavLink to='/register'>
+                            <NavLink to='/signup'>
                                 <a className="text-rose-600 hover:underline" href="#">
                                     Sign up
                                 </a>
