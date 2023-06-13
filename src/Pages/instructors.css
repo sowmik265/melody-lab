@@ -1,0 +1,53 @@
+.guitar {
+    background-image: url('https://i.ibb.co/v1cYXcd/guiter-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.saxophone {
+    background-image: url('https://i.ibb.co/sF0qHpx/saxophone-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.violin {
+    background-image: url('https://i.ibb.co/JRmmzWM/violin-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.piano {
+    background-image: url('https://i.ibb.co/sVHKv9M/piano-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.harmonium {
+    background-image: url('https://i.ibb.co/PhQDrMx/harmonium-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.drums {
+    background-image: url('https://i.ibb.co/P4Hk1BL/drums-Cover.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}

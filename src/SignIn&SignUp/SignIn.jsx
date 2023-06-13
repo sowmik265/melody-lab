@@ -1,23 +1,82 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import Lottie from 'lottie-react';
-import LoginAnimation from '../../public/LoginAnimation.json';
-import { NavLink } from 'react-router-dom';
+import LoginAnimation from '../../src/assets/LoginAnimation.json';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { AuthContext } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignIn = () => {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const { signIn, googleLogIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+
+    const [error, setError] = useState('');
+
+    const onSubmit = data => {
+        signIn(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+                navigate(from, { replace: true });
+                reset();
+                setError("");
+            })
+            .catch(error => {
+                console.log(error);
+                setError(error.message)
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleLogIn()
+            .then(result => {
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const saveUser = { name: loggedInUser.displayName, email: loggedInUser.email }
+                fetch('http://localhost:5000/users', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(saveUser)
+                })
+                    .then(res => res.json())
+                    .then(() => {
+                        navigate(from, { replace: true });
+                    })
+            })
+    }
+
+
+
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col md:flex-row-reverse">
 
                 {/* animation */}
-                <div className="text-center w-1/2">
+                <div className="text-center md:w-1/2">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                     <Lottie animationData={LoginAnimation}></Lottie>
                 </div>
 
                 {/* form */}
-                <div className=" p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 w-1/2">
+                <div onSubmit={handleSubmit(onSubmit)} className=" p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 md:w-1/2 w-full">
                     <form className="mt-6">
                         <div className="mb-2">
                             <label
@@ -27,11 +86,12 @@ const SignIn = () => {
                                 Email
                             </label>
                             <input
-                                name='email'
                                 type="email"
                                 placeholder='Your email address'
                                 className="block w-full px-4 py-2 mt-2 text-rose-600 bg-white border rounded-md focus:border-rose-400 focus:ring-rose-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                {...register("email", { required: true })}
                             />
+                            {errors.email && <span className='text-yellow-300'>Email is required</span>}
                         </div>
                         <div className="mb-2">
                             <label
@@ -41,14 +101,17 @@ const SignIn = () => {
                                 Password
                             </label>
                             <input
-                                name='password'
                                 type="password"
                                 placeholder='Your password'
                                 className="block w-full px-4 py-2 mt-2 text-rose-600 bg-white border rounded-md focus:border-rose-400 focus:ring-rose-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                {...register("password", {
+                                    required: true,
+                                })}
                             />
+                            {errors.password && <span className='text-yellow-300'>Password is required</span>}
                         </div>
                         <div>
-                            {/* <p className='text-rose-600'>{error}</p> */}
+                            <p className='text-yellow-300'>{error}</p>
                         </div>
                         <a
                             href="#"
@@ -73,7 +136,7 @@ const SignIn = () => {
                     </div>
                     <div className="my-6 space-y-2">
                         <button
-                            // onClick={handleLogInGoogle}
+                            onClick={handleGoogleSignIn}
                             aria-label="Login with Google"
                             type="button"
                             className="flex items-center justify-center w-full p-2 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 dark:border-gray-400 focus:ring-violet-400"

@@ -1,13 +1,55 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { AuthContext } from '../Providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    const onSubmit = data => {
+        createUser(data.email, data.password)
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                updateUserProfile(data.name, data.photo)
+                    .then(() => {
+                        // console.log('user profile updated');
+                        const saveUser = { name: data.name, email: data.email , photoURL : data.photo}
+                        fetch('http://localhost:5000/users', {
+                            method: 'POST',
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(saveUser)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        title: 'Successfully Registered !',
+                                        showClass: {
+                                            popup: 'animate__animated animate__fadeInDown'
+                                        },
+                                        hideClass: {
+                                            popup: 'animate__animated animate__fadeOutUp'
+                                        }
+                                    });
+                                    navigate('/');
+                                }
+                            })
+
+                    })
+                    .catch(error => console.log(error))
+            })
+    }
+
     return (
-        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
-            <div className="w-full p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 mt-6">
+        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden mx-2">
+            <div className="w-full p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 mt-6 mx-auto">
                 <h1 className="text-3xl font-semibold text-center text-gray-200 uppercase">
                     Register
                 </h1>

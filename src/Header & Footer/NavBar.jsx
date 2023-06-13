@@ -1,32 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ActiveLink from '../Utilitites/ActiveLink';
-import {GiMusicalKeyboard} from 'react-icons/gi';
+import { GiMusicalKeyboard } from 'react-icons/gi';
+import { AuthContext } from '../Providers/AuthProvider';
 
-const navTool = <>
-    <li className='font-extrabold'><ActiveLink to='/'>Home</ActiveLink></li>
-    <li className='font-extrabold'><ActiveLink to='/signin'>Log in</ActiveLink></li>
-
-
-    {/* {
-        user ?
-            <div className='flex'>
-                <li>
-                    <div className="navbar-end">
-                        <div className="">
-                            <img className='image-full rounded-full w-24' src={user?.photoURL} title={user?.displayName} />
-                        </div>
-                    </div>
-                </li>
-                <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
-            </div> :
-            <li className='font-extrabold'><ActiveLink to='/login'>Login</ActiveLink></li>
-    } */}
-</>
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(error => console.log(error));
+    }
+
+    const navTool = <>
+        <li className='font-extrabold'><ActiveLink to='/'>HOME</ActiveLink></li>
+        <li className='font-extrabold'><ActiveLink to='/instructors'>INSTRUCTORS</ActiveLink></li>
+        <li className='font-extrabold'><ActiveLink to='/classes'>CLASSES</ActiveLink></li>
+        {
+            user ?
+                <>
+                    <li className='font-extrabold'><ActiveLink to='/dashboard'>DASHBOARD</ActiveLink></li>
+                    <li>
+                        <div><img className='w-8 h-8 rounded-full' src={user?.photoURL} title={user?.displayName} /></div>
+                    </li>
+                    <li className='font-extrabold'><button onClick={handleLogOut}><ActiveLink>Logout</ActiveLink></button></li>
+                </> :
+                <li className='font-extrabold'><ActiveLink to='/signin'>LOGIN</ActiveLink></li>
+        }
+    </>
+
     return (
         <div>
-            <div className="navbar bg-rose-700 p-4">
+            <div className="navbar bg-rose-700 p-4 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,7 +44,7 @@ const NavBar = () => {
                     </div>
                     <a className="btn btn-ghost  text-4xl font-bold text-gray-300 font-mono">
                         MELODY<GiMusicalKeyboard></GiMusicalKeyboard>LAB<span className='text-3xl font-extrabold'>.</span>
-                        </a>
+                    </a>
                 </div>
                 <div className="navbar-middle hidden lg:flex text-gray-300">
                     <ul className="menu menu-horizontal px-1">
