@@ -60,7 +60,7 @@
     "className": "Guitar",
     "totalSeats": 20,
     "price": 75,
-    "time": "every sunday | 10 a.m to 11 a.m"
+    "time": "every monday | 10 a.m to 11 a.m"
   },
   {
     "instructorName": "Emily Johnson",
@@ -69,7 +69,7 @@
     "className": "violin",
     "totalSeats": 15,
     "price": 85,
-    "time": "every sunday | 12 p.m to 1 p.m"
+    "time": "every monday | 12 p.m to 1 p.m"
   },
   {
     "instructorName": "David Williams",
@@ -78,7 +78,7 @@
     "className": "piano",
     "totalSeats": 25,
     "price": 100,
-    "time": "every sunday | 2 p.m to 3 p.m"
+    "time": "every monday | 2 p.m to 3 p.m"
   },
   {
     "instructorName": "Sarah Davis",
@@ -87,7 +87,7 @@
     "className": "drums",
     "totalSeats": 20,
     "price": 120,
-    "time": "every sunday | 4 p.m to 5 p.m"
+    "time": "every monday | 4 p.m to 5 p.m"
   },
   {
     "instructorName": "Michael Wilson",
@@ -96,7 +96,7 @@
     "className": "saxophone",
     "totalSeats": 15,
     "price": 150,
-    "time": "every sunday | 6 p.m to 7 p.m"
+    "time": "every monday | 6 p.m to 7 p.m"
   },
   {
     "instructorName": "Amy Thompson",
@@ -105,7 +105,7 @@
     "className": "harmonium",
     "totalSeats": 10,
     "price": 30,
-    "time": "every sunday | 8 p.m to 9 p.m"
+    "time": "every monday | 8 p.m to 9 p.m"
   },
   {
     "instructorName": "John Smith",
@@ -114,7 +114,7 @@
     "className": "Guitar",
     "totalSeats": 20,
     "price": 75,
-    "time": "every sunday | 10 a.m to 11 a.m"
+    "time": "every tuesday | 10 a.m to 11 a.m"
   },
   {
     "instructorName": "Emily Johnson",
@@ -123,7 +123,7 @@
     "className": "violin",
     "totalSeats": 15,
     "price": 85,
-    "time": "every sunday | 12 p.m to 1 p.m"
+    "time": "every tuesday | 12 p.m to 1 p.m"
   },
   {
     "instructorName": "David Williams",
@@ -132,7 +132,7 @@
     "className": "piano",
     "totalSeats": 25,
     "price": 100,
-    "time": "every sunday | 2 p.m to 3 p.m"
+    "time": "every tuesday | 2 p.m to 3 p.m"
   },
   {
     "instructorName": "Sarah Davis",
@@ -141,7 +141,7 @@
     "className": "drums",
     "totalSeats": 20,
     "price": 120,
-    "time": "every sunday | 4 p.m to 5 p.m"
+    "time": "every tuesday | 4 p.m to 5 p.m"
   },
   {
     "instructorName": "Michael Wilson",
@@ -150,7 +150,7 @@
     "className": "saxophone",
     "totalSeats": 15,
     "price": 150,
-    "time": "every sunday | 6 p.m to 7 p.m"
+    "time": "every tuesday | 6 p.m to 7 p.m"
   },
   {
     "instructorName": "Amy Thompson",
@@ -159,7 +159,7 @@
     "className": "harmonium",
     "totalSeats": 10,
     "price": 30,
-    "time": "every sunday | 8 p.m to 9 p.m"
+    "time": "every tuesday | 8 p.m to 9 p.m"
   },
   {
     "instructorName": "John Smith",
@@ -168,7 +168,7 @@
     "className": "Guitar",
     "totalSeats": 20,
     "price": 75,
-    "time": "every sunday | 10 a.m to 11 a.m"
+    "time": "every wednesday | 10 a.m to 11 a.m"
   },
   {
     "instructorName": "Emily Johnson",
@@ -177,7 +177,7 @@
     "className": "violin",
     "totalSeats": 15,
     "price": 85,
-    "time": "every sunday | 12 p.m to 1 p.m"
+    "time": "every wednesday | 12 p.m to 1 p.m"
   },
   {
     "instructorName": "David Williams",
@@ -186,7 +186,7 @@
     "className": "piano",
     "totalSeats": 25,
     "price": 100,
-    "time": "every sunday | 2 p.m to 3 p.m"
+    "time": "every wednesday | 2 p.m to 3 p.m"
   },
   {
     "instructorName": "Sarah Davis",
@@ -195,7 +195,7 @@
     "className": "drums",
     "totalSeats": 20,
     "price": 120,
-    "time": "every sunday | 4 p.m to 5 p.m"
+    "time": "every wednesday | 4 p.m to 5 p.m"
   },
   {
     "instructorName": "Michael Wilson",
@@ -204,7 +204,7 @@
     "className": "saxophone",
     "totalSeats": 15,
     "price": 150,
-    "time": "every sunday | 6 p.m to 7 p.m"
+    "time": "every wednesday | 6 p.m to 7 p.m"
   },
   {
     "instructorName": "Amy Thompson",
@@ -213,7 +213,7 @@
     "className": "harmonium",
     "totalSeats": 10,
     "price": 30,
-    "time": "every sunday | 8 p.m to 9 p.m"
+    "time": "every wednesday | 8 p.m to 9 p.m"
   },
   {
     "instructorName": "John Smith",
@@ -222,7 +222,7 @@
     "className": "Guitar",
     "totalSeats": 20,
     "price": 75,
-    "time": "every sunday | 10 a.m to 11 a.m"
+    "time": "every thursday | 10 a.m to 11 a.m"
   },
   {
     "instructorName": "Emily Johnson",
@@ -231,7 +231,7 @@
     "className": "violin",
     "totalSeats": 15,
     "price": 85,
-    "time": "every sunday | 12 p.m to 1 p.m"
+    "time": "every thursday | 12 p.m to 1 p.m"
   },
   {
     "instructorName": "David Williams",
@@ -240,7 +240,7 @@
     "className": "piano",
     "totalSeats": 25,
     "price": 100,
-    "time": "every sunday | 2 p.m to 3 p.m"
+    "time": "every thursday | 2 p.m to 3 p.m"
   },
   {
     "instructorName": "Sarah Davis",
@@ -249,7 +249,7 @@
     "className": "drums",
     "totalSeats": 20,
     "price": 120,
-    "time": "every sunday | 4 p.m to 5 p.m"
+    "time": "every thursdayday | 4 p.m to 5 p.m"
   },
   {
     "instructorName": "Michael Wilson",
@@ -258,7 +258,7 @@
     "className": "saxophone",
     "totalSeats": 15,
     "price": 150,
-    "time": "every sunday | 6 p.m to 7 p.m"
+    "time": "every thursday | 6 p.m to 7 p.m"
   },
   {
     "instructorName": "Amy Thompson",
@@ -267,7 +267,7 @@
     "className": "harmonium",
     "totalSeats": 10,
     "price": 30,
-    "time": "every sunday | 8 p.m to 9 p.m"
+    "time": "every thursday | 8 p.m to 9 p.m"
   }
   
   
