@@ -17,10 +17,10 @@ const NavBar = () => {
         <li className='font-extrabold'><ActiveLink to='/'>HOME</ActiveLink></li>
         <li className='font-extrabold'><ActiveLink to='/instructors'>INSTRUCTORS</ActiveLink></li>
         <li className='font-extrabold'><ActiveLink to='/classes'>CLASSES</ActiveLink></li>
+        <li className='font-extrabold'><ActiveLink to='/dashboard'>DASHBOARD</ActiveLink></li>
         {
             user ?
                 <>
-                    <li className='font-extrabold'><ActiveLink to='/dashboard'>DASHBOARD</ActiveLink></li>
                     <li>
                         <div><img className='w-8 h-8 rounded-full' src={user?.photoURL} title={user?.displayName} /></div>
                     </li>

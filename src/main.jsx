@@ -23,6 +23,8 @@ import AdminHome from './Dashboard/AdminHome.jsx';
 import ManageUsers from './Dashboard/ManageUsers.jsx';
 import SelectedClasses from './Dashboard/SelectedClasses.jsx';
 import AdminRoute from './routes/AdminRoute.jsx';
+import PrivateRoute from './routes/PrivateRoute.jsx';
+import Payment from './Dashboard/Payment.jsx';
 
 const queryClient = new QueryClient();
 
@@ -51,13 +53,13 @@ const router = createBrowserRouter([
       },
       {
         path: 'classes',
-        element: <Classes></Classes>
+        element: <PrivateRoute><Classes></Classes></PrivateRoute>
       }
     ]
   },
   {
     path: 'dashboard',
-    element: <Dashboard></Dashboard>,
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
     children: [
       //admin routes
       {
@@ -76,6 +78,10 @@ const router = createBrowserRouter([
       {
         path: 'selectedclasses',
         element: <SelectedClasses></SelectedClasses>
+      },
+      {
+        path:'payment',
+        element:<Payment></Payment>
       }
 
     ]
