@@ -6,7 +6,7 @@ const UserHome = () => {
     const {user} = useContext(AuthContext)
     return (
         <div>
-            {user.displayName}
+            {user?.displayName}
             this is user homee yooooo bitch
         </div>
     );

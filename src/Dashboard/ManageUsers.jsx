@@ -3,11 +3,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../hooks/useAxiosSecure';
 
 const ManageUsers = () => {
+    const [axiosSecure] = useAxiosSecure();
     const { data: users = [], refetch } = useQuery(['users'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json();
+        const res = await axiosSecure.get('/users')
+        return res.data;
 
     })
 
@@ -20,24 +22,24 @@ const ManageUsers = () => {
         console.log(user)
         console.log(users)
 
-  
-            fetch(`http://localhost:5000/users/admin/${user._id}`, {
-                method: 'PATCH'
+
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `${user.name} is an Admin Now!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data.modifiedCount) {
-                        refetch();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: `${user.name} is an Admin Now!`,
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                    }
-                })
 
 
     }

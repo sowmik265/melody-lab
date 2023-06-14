@@ -2,8 +2,11 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, FaUsers, FaCashRegister } from 'react-icons/fa';
 import { MdNaturePeople } from 'react-icons/md';
+import useAdmin from '../hooks/useAdmin';
 
 const Dashboard = () => {
+
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="drawer lg:drawer-open">
@@ -16,21 +19,21 @@ const Dashboard = () => {
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                 <ul className="menu p-4 w-80 h-full bg-rose-700 text-yellow-300">
-                    {/* {
+                    {
                         isAdmin ?
-                            <> */}
-                    {/* <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                    <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
-                    <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li> */}
-                    {/* </> */}
-                            {/* : */}
+                            <>
+                                <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
+                                <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
+                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li>
+                            </>
+                            :
                             <>
                                 <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
                                 <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
                                 <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
                                 <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
                             </>
-                    {/* } */}
+                    }
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>

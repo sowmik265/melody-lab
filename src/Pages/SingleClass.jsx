@@ -9,7 +9,7 @@ const SingleClass = ({ name }) => {
     const { className, classImage, instructorName, email, totalSeats, price, time, _id } = name;
     const { user } = useContext(AuthContext);
     const [, refetch] = useCart();
-    
+
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -29,7 +29,7 @@ const SingleClass = ({ name }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.insertedId) {
-                        refetch(); 
+                        refetch();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
