@@ -21,7 +21,7 @@ const PopularInstructors = () => {
                 effect={"coverflow"}
                 grabCursor={true}
                 centeredSlides={true}
-                slidesPerView={3}
+                slidesPerView={"auto"}
                 coverflowEffect={{
                     rotate: 50,
                     stretch: 0,
@@ -31,25 +31,25 @@ const PopularInstructors = () => {
                 }}
                 pagination={true}
                 modules={[EffectCoverflow, Pagination]}
-                className="mySwiper h-full mx-auto"
-            > {popular.map(ins =>
-                <SwiperSlide>
-                    <div className="card w-96 bg-base-100 shadow-xl h-full border border-yellow-300 border-b-8">
-                        <figure className="px-10 pt-10">
-                            <img src={ins.image} alt="Shoes" className="rounded-xl image-full" />
-                        </figure>
-                        <div className="card-body items-center text-center">
-                            <h2 className="card-title">{ins.name}</h2>
-                            <p>{ins.instrument} specialist!</p>
-                            <div className="card-actions">
-                                <button className="btn btn-outline btn-warning border-b-4">Contact Now</button>
+                className="mySwiper"
+            >
+                {popular.map(ins =>
+                    <SwiperSlide>
+                        <div className="card w-96 bg-base-100 shadow-xl h-full border border-yellow-300 border-b-8 mx-auto">
+                            <figure className="px-10 pt-10">
+                                <img src={ins.image} alt="Shoes" className="rounded-xl image-full" />
+                            </figure>
+                            <div className="card-body items-center text-center">
+                                <h2 className="card-title">{ins.name}</h2>
+                                <p>{ins.instrument} specialist!</p>
+                                <div className="card-actions">
+                                    <button className="btn btn-outline btn-warning border-b-4">Contact Now</button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </SwiperSlide>
-            )}
+                    </SwiperSlide>
+                )}
             </Swiper>
-
         </div>
     );
 };
