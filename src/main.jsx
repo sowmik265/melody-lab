@@ -22,6 +22,7 @@ import UserHome from './Dashboard/UserHome.jsx';
 import AdminHome from './Dashboard/AdminHome.jsx';
 import ManageUsers from './Dashboard/ManageUsers.jsx';
 import SelectedClasses from './Dashboard/SelectedClasses.jsx';
+import AdminRoute from './routes/AdminRoute.jsx';
 
 const queryClient = new QueryClient();
 
@@ -61,11 +62,11 @@ const router = createBrowserRouter([
       //admin routes
       {
         path: 'adminhome',
-        element: <AdminHome></AdminHome>
+        element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
       },
       {
         path: 'manageusers',
-        element: <ManageUsers></ManageUsers>
+        element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
       },
       //student routes
       {
@@ -73,8 +74,8 @@ const router = createBrowserRouter([
         element: <UserHome></UserHome>
       },
       {
-        path:'selectedclasses',
-        element:<SelectedClasses></SelectedClasses>
+        path: 'selectedclasses',
+        element: <SelectedClasses></SelectedClasses>
       }
 
     ]
