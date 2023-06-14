@@ -21,6 +21,7 @@ import Dashboard from './Dashboard/Dashboard.jsx';
 import UserHome from './Dashboard/UserHome.jsx';
 import AdminHome from './Dashboard/AdminHome.jsx';
 import ManageUsers from './Dashboard/ManageUsers.jsx';
+import SelectedClasses from './Dashboard/SelectedClasses.jsx';
 
 const queryClient = new QueryClient();
 
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: 'userhome',
         element: <UserHome></UserHome>
+      },
+      {
+        path:'selectedclasses',
+        element:<SelectedClasses></SelectedClasses>
       }
 
     ]

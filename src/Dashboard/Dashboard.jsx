@@ -19,18 +19,18 @@ const Dashboard = () => {
                     {/* {
                         isAdmin ?
                             <> */}
-                    <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
+                    {/* <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
                     <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
-                    <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li>
-                    {/* </>
-                            :
+                    <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li> */}
+                    {/* </> */}
+                            {/* : */}
                             <>
                                 <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
                                 <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
                                 <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
                             </>
-                    } */}
+                    {/* } */}
 
                     <div className="divider"></div>
                     <li><NavLink to="/"><FaHome></FaHome> Home</NavLink> </li>
