@@ -2,6 +2,7 @@ import React from 'react';
 import useClass from '../hooks/useClass';
 import ClassCategory from './ClassCategory';
 import SectionTile from '../Utilitites/SectionTile';
+import { Helmet } from 'react-helmet-async';
 
 
 const Classes = () => {
@@ -15,6 +16,9 @@ const Classes = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Melody Lab | Classes</title>
+            </Helmet>
             <SectionTile title={'our guiter classes'}></SectionTile>
             <ClassCategory classes={guitarClass}></ClassCategory>
             <SectionTile title={'our violin classes'}></SectionTile>

@@ -2,6 +2,7 @@ import React from 'react';
 import useInstructors from '../hooks/useInstructors';
 import './instructors.css';
 import { AttentionSeeker } from 'react-awesome-reveal';
+import { Helmet } from 'react-helmet-async';
 
 const Instructors = () => {
     const [instructors] = useInstructors();
@@ -14,7 +15,10 @@ const Instructors = () => {
     const drums = instructors.filter(drum => drum.instrument === "drums");
 
     return (
-        <div className=''>
+        <div>
+            <Helmet>
+                <title>Melody Lab | Instructors</title>
+            </Helmet>
             {/* guitar */}
             <div className='guitar mt-10'>
                 <AttentionSeeker>

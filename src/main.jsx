@@ -25,6 +25,7 @@ import SelectedClasses from './Dashboard/SelectedClasses.jsx';
 import AdminRoute from './routes/AdminRoute.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Payment from './Dashboard/Payment.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 const queryClient = new QueryClient();
 
@@ -80,8 +81,8 @@ const router = createBrowserRouter([
         element: <SelectedClasses></SelectedClasses>
       },
       {
-        path:'payment',
-        element:<Payment></Payment>
+        path: 'payment',
+        element: <Payment></Payment>
       }
 
     ]
@@ -92,9 +93,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
   <React.StrictMode>
     <AuthProvider>
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
   ,
