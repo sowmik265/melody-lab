@@ -1,13 +1,70 @@
 import React from 'react';
 import useClass from '../hooks/useClass';
 import { FaTrashAlt } from 'react-icons/fa';
+import Swal from 'sweetalert2';
+import useAxiosSecure from '../hooks/useAxiosSecure';
+import { useQuery } from '@tanstack/react-query';
 
 const ManageClasses = () => {
-    const [classes, refetch] = useClass();
+
+    const [axiosSecure] = useAxiosSecure();
+    const { data: classes = [], refetch } = useQuery(['classes'], async () => {
+        const res = await axiosSecure.get('/classes')
+        return res.data;
+
+    })
 
     const handleDelete = item => {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
 
+                axiosSecure.delete(`/classes/${item._id}`)
+                    .then(res => {
+                        console.log('deleted res', res.data);
+                        if (res.data.deletedCount > 0) {
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+            }
+        })
     }
+
+    const handleApprove = item => {
+        // console.log(user)
+        // console.log(users)
+        fetch(`http://localhost:5000/classes/${item._id}`, {
+            method: 'PATCH'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount) {
+                    refetch();
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: `class approved!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
+    }
+
 
     return (
         <div className="w-full">
@@ -47,7 +104,8 @@ const ManageClasses = () => {
                                 </td>
                                 <td className="">${item.price}</td>
                                 <td>
-                                    <button className="btn btn-ghost btn-xs">details</button>
+                                {item.status === 'approved' ? <p className=' text-green-600 font-bold'>Approved </p> :
+                                    <button onClick={()=>handleApprove(item)} className="btn btn-ghost btn-xs bg-yellow-600">Approve</button>}
                                 </td>
                                 <td>
                                     <button onClick={() => handleDelete(item)} className="btn btn-ghost bg-red-600  text-white"><FaTrashAlt></FaTrashAlt></button>

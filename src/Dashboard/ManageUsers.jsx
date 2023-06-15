@@ -77,7 +77,7 @@ const ManageUsers = () => {
                             refetch();
                             Swal.fire(
                                 'Deleted!',
-                                'Your file has been deleted.',
+                                'user has been deleted.',
                                 'success'
                             )
                         }

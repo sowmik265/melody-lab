@@ -1,7 +1,6 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect } from "react";
 import { useState } from "react";
-import './CheckoutForm.css';
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import useAuth from "../hooks/useAuth";
 
@@ -86,7 +85,7 @@ const CheckoutForm = ({ cart, price }) => {
                 quantity: cart.length,
                 cartItems: cart.map(item => item._id),
                 classItems: cart.map(item => item.classId),
-                status: 'payment pending',
+                status: 'enrolled',
                 itemNames: cart.map(item => item.className)
             }
             axiosSecure.post('/payments', payment)

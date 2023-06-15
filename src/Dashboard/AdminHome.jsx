@@ -5,6 +5,7 @@ import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import useInstructors from '../hooks/useInstructors';
 import useClass from '../hooks/useClass';
+import { Helmet } from 'react-helmet-async';
 
 const AdminHome = () => {
     const [instructors] = useInstructors();
@@ -18,6 +19,9 @@ const AdminHome = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Melody Lab | Admin Home</title>
+            </Helmet>
 
             <h3 className='text-rose-700 font-mono font-bold md:text-4xl text-2xl text-center my-10'>Hello , {user.displayName} !</h3>
 

@@ -17,7 +17,7 @@ const Classes = () => {
     return (
         <div>
             <Helmet>
-                <title>Melody Lab | Classes</title>
+                <title>Melody Lab | Home</title>
             </Helmet>
             <SectionTile title={'our guiter classes'}></SectionTile>
             <ClassCategory classes={guitarClass}></ClassCategory>

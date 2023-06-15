@@ -28,6 +28,9 @@ import Payment from './Dashboard/Payment.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import ManageClasses from './Dashboard/ManageClasses.jsx';
 import InstructorHome from './Dashboard/InstructorHome.jsx';
+import Enrolled from './Dashboard/Enrolled.jsx';
+import History from './Dashboard/History.jsx';
+import MyClasses from './Pages/MyClasses.jsx';
 
 
 const queryClient = new QueryClient();
@@ -58,6 +61,10 @@ const router = createBrowserRouter([
       {
         path: 'classes',
         element: <PrivateRoute><Classes></Classes></PrivateRoute>
+      },
+      {
+        path:'myclasses',
+        element: <PrivateRoute><MyClasses></MyClasses></PrivateRoute>
       }
     ]
   },
@@ -91,6 +98,14 @@ const router = createBrowserRouter([
       {
         path: 'selectedclasses',
         element: <SelectedClasses></SelectedClasses>
+      },
+      {
+        path: 'enrolledclass',
+        element: <Enrolled></Enrolled>
+      },
+      {
+        path: 'paymenthistory',
+        element: <History></History>
       },
       {
         path: 'payment',

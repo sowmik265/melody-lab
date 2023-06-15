@@ -5,11 +5,15 @@ import { MdNaturePeople } from 'react-icons/md';
 import useAdmin from '../hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
 import useInstructor from '../hooks/useInstructor';
+import useAuth from '../hooks/useAuth';
+import { AuthContext } from '../Providers/AuthProvider';
+import SectionTile from '../Utilitites/SectionTile';
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
+    const { user } = useAuth(AuthContext);
 
     return (
         <>
@@ -19,6 +23,9 @@ const Dashboard = () => {
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
+
+
+
                     <Outlet></Outlet>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 </div>
@@ -30,9 +37,9 @@ const Dashboard = () => {
 
                             isAdmin &&
                             <>
-                                <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                                <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
-                                <li><NavLink to="/dashboard/manageclasses"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/adminhome"><img className='w-5 5-6' src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1" /> Admin Home</NavLink></li>
+                                <li><NavLink to="/dashboard/manageusers"><img className='w-5 5-6' src="https://img.icons8.com/fluency/48/group.png" alt="group" /> Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/manageclasses"><img img className='w-5 5-6' src="https://img.icons8.com/color/48/book.png" alt="book" /> Manage Classes</NavLink></li>
                             </>
                             ||
                             isInstructor &&
@@ -45,8 +52,8 @@ const Dashboard = () => {
                             <>
                                 <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
                                 <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
-                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
-                                <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
+                                <li><NavLink to="/dashboard/enrolledclass"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/paymenthistory"><FaWallet></FaWallet> Payment History</NavLink></li>
                             </>
 
 
