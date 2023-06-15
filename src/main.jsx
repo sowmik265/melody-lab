@@ -26,6 +26,8 @@ import AdminRoute from './routes/AdminRoute.jsx';
 import PrivateRoute from './routes/PrivateRoute.jsx';
 import Payment from './Dashboard/Payment.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import ManageClasses from './Dashboard/ManageClasses.jsx';
+
 
 const queryClient = new QueryClient();
 
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: 'manageusers',
         element: <AdminRoute><ManageUsers></ManageUsers></AdminRoute>
+      },
+      {
+        path: 'manageclasses',
+        element: <ManageClasses></ManageClasses>
       },
       //student routes
       {

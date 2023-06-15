@@ -1,15 +1,15 @@
 import { useQuery } from '@tanstack/react-query';
 
 const useClass = () => {
-    const { data: menu = [], isLoading: loading, refetch } = useQuery({
-        queryKey: ['menu'],
+    const { data: classes = [], isLoading: loading, refetch } = useQuery({
+        queryKey: ['classes'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/classes');
             return res.json();
         }
     })
 
-    return [menu, loading, refetch]
+    return [classes, loading, refetch]
 };
 
 export default useClass;

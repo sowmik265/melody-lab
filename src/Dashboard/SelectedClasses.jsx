@@ -6,7 +6,7 @@ import { FaTrashAlt } from 'react-icons/fa';
 
 const SelectedClasses = () => {
     const [cart, refetch] = useCart();
-    console.log(cart);
+    // console.log(cart);
 
     const total = cart.reduce((sum, item) => item.price + sum, 0);
 
