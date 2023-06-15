@@ -1,6 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { useEffect } from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hooks/useAxiosSecure';
@@ -12,11 +11,6 @@ const ManageUsers = () => {
         return res.data;
 
     })
-
-    useEffect(() => {
-        console.log(users)
-    }, [users])
-
 
     const handleMakeAdmin = user => {
         // console.log(user)

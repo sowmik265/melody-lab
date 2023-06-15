@@ -27,6 +27,7 @@ import PrivateRoute from './routes/PrivateRoute.jsx';
 import Payment from './Dashboard/Payment.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import ManageClasses from './Dashboard/ManageClasses.jsx';
+import InstructorHome from './Dashboard/InstructorHome.jsx';
 
 
 const queryClient = new QueryClient();
@@ -76,6 +77,11 @@ const router = createBrowserRouter([
       {
         path: 'manageclasses',
         element: <ManageClasses></ManageClasses>
+      },
+      //instructor routes
+      {
+        path: 'instructorhome',
+        element: <InstructorHome></InstructorHome>
       },
       //student routes
       {

@@ -4,16 +4,18 @@ import { FaShoppingCart, FaWallet, FaCalendarAlt, FaHome, FaUtensils, FaBook, Fa
 import { MdNaturePeople } from 'react-icons/md';
 import useAdmin from '../hooks/useAdmin';
 import { Helmet } from 'react-helmet-async';
+import useInstructor from '../hooks/useInstructor';
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     return (
         <>
-        <Helmet>
-            <title>Melody Lab | Dashboard</title>
-        </Helmet>
+            <Helmet>
+                <title>Melody Lab | Dashboard</title>
+            </Helmet>
             <div className="drawer lg:drawer-open">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
@@ -25,19 +27,29 @@ const Dashboard = () => {
                     <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
                     <ul className="menu p-4 w-80 h-full bg-rose-700 text-yellow-300">
                         {
-                            isAdmin ?
-                                <>
-                                    <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
-                                    <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
-                                    <li><NavLink to="/dashboard/manageclasses"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li>
-                                </>
-                                :
-                                <>
-                                    <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                                    <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
-                                    <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
-                                    <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
-                                </>
+
+                            isAdmin &&
+                            <>
+                                <li><NavLink to="/dashboard/adminhome"><FaHome></FaHome> Admin Home</NavLink></li>
+                                <li><NavLink to="/dashboard/manageusers"><FaCalendarAlt></FaCalendarAlt> Manage Users</NavLink></li>
+                                <li><NavLink to="/dashboard/manageclasses"><FaCalendarAlt></FaCalendarAlt> Manage Classes</NavLink></li>
+                            </>
+                            ||
+                            isInstructor &&
+                            <>
+                                <li><NavLink to="/dashboard/instructorhome"><FaHome></FaHome> Instructor Home</NavLink></li>
+                                <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt>My Classes</NavLink></li>
+                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Add Class</NavLink></li>
+                            </>
+                            ||
+                            <>
+                                <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
+                                <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/"><FaWallet></FaWallet> Payment History</NavLink></li>
+                            </>
+
+
                         }
 
                         <div className="divider"></div>
