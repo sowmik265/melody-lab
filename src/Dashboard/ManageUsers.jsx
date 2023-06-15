@@ -3,6 +3,7 @@ import React from 'react';
 import { FaTrashAlt, FaUserShield } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet-async';
 
 const ManageUsers = () => {
     const [axiosSecure] = useAxiosSecure();
@@ -88,6 +89,9 @@ const ManageUsers = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Melody Lab | Manage Users</title>
+            </Helmet>
             <div className="w-full">
                 {/* <Helmet>
                     <title>Bistro Boss | All users</title>

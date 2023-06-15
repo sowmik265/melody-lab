@@ -31,6 +31,8 @@ import InstructorHome from './Dashboard/InstructorHome.jsx';
 import Enrolled from './Dashboard/Enrolled.jsx';
 import History from './Dashboard/History.jsx';
 import MyClasses from './Pages/MyClasses.jsx';
+import AddClass from './Dashboard/AddClass.jsx';
+import Myclass from './Dashboard/Myclass.jsx';
 
 
 const queryClient = new QueryClient();
@@ -63,7 +65,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute><Classes></Classes></PrivateRoute>
       },
       {
-        path:'myclasses',
+        path: 'myclasses',
         element: <PrivateRoute><MyClasses></MyClasses></PrivateRoute>
       }
     ]
@@ -89,6 +91,14 @@ const router = createBrowserRouter([
       {
         path: 'instructorhome',
         element: <InstructorHome></InstructorHome>
+      },
+      {
+        path: 'myclass',
+        element: <Myclass></Myclass>
+      },
+      {
+        path: 'addclass',
+        element: <AddClass></AddClass>
       },
       //student routes
       {

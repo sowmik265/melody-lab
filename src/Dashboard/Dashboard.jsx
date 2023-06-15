@@ -44,16 +44,16 @@ const Dashboard = () => {
                             ||
                             isInstructor &&
                             <>
-                                <li><NavLink to="/dashboard/instructorhome"><FaHome></FaHome> Instructor Home</NavLink></li>
+                                <li><NavLink to="/dashboard/instructorhome"><img className='w-5 5-6' src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1" /> Instructor Home</NavLink></li>
                                 <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt>My Classes</NavLink></li>
-                                <li><NavLink to="/"><FaCalendarAlt></FaCalendarAlt> Add Class</NavLink></li>
+                                <li><NavLink to="/dashboard/addclass"><FaCalendarAlt></FaCalendarAlt> Add Class</NavLink></li>
                             </>
                             ||
                             <>
-                                <li><NavLink to="/dashboard/userhome"><FaHome></FaHome> Student Home</NavLink></li>
-                                <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt> My Selected Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/enrolledclass"><FaCalendarAlt></FaCalendarAlt> My Enrolled Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/paymenthistory"><FaWallet></FaWallet> Payment History</NavLink></li>
+                                <li><NavLink to="/dashboard/userhome"><img className='w-5 5-6' src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1" /> Student Home</NavLink></li>
+                                <li><NavLink to="/dashboard/selectedclasses"><img className='w-5 5-6' src="https://img.icons8.com/fluency/48/shopping-cart.png" alt="shopping-cart" /> My Selected Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/enrolledclass"><img className='w-5 5-6' src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/external-enrollment-university-flaticons-lineal-color-flat-icons.png" alt="external-enrollment-university-flaticons-lineal-color-flat-icons" /> My Enrolled Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/paymenthistory"><img className='w-5 5-6' src="https://img.icons8.com/fluency/48/card-in-use.png" alt="card-in-use" /> Payment History</NavLink></li>
                             </>
 
 

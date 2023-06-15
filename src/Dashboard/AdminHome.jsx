@@ -43,7 +43,7 @@ const AdminHome = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-60 p-2 rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl m-2 bg-yellow-500">
+                <div className="w-full md:w-60 p-2 rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl m-2 bg-green-500">
                     <div className="p-2 flex flex-col gap-2 text-center">
                         <h2 className="font-bold text-7xl mb-2 text-rose-700">{classes.length}</h2>
                         <p className="font-bold text-lg text-rose-700">Classes</p>
