@@ -12,7 +12,7 @@ import SectionTile from '../Utilitites/SectionTile';
 
 const Myclass = () => {
     const { user, loading } = useAuth();
-  
+
 
     const [classes] = useClass();
     const myClass = classes.filter((my) => my.email === `${user?.email}`);
@@ -22,7 +22,7 @@ const Myclass = () => {
 
         <>
 
-        <SectionTile title={'My All classes'}></SectionTile>
+            <SectionTile title={'My All classes'}></SectionTile>
 
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">

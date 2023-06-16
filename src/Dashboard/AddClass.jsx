@@ -17,7 +17,7 @@ const AddClass = () => {
         const { className, price, classImage, totalSeats, time } = data;
         // console.log(data)
         const newItem = { instructorName : user?.displayName , classImage, email : user?.email, className, totalSeats : parseFloat(totalSeats), price: parseFloat(price), time  }
-        // console.log(newItem)
+        console.log(newItem)
         axiosSecure.post('/classes', newItem)
             .then(data => {
                 console.log('after posting new class item', data.data)
@@ -69,7 +69,7 @@ const AddClass = () => {
                             <span className="label-text font-semibold">Photo URL*</span>
                         </label>
                         <input type="text" placeholder="Photo URL"
-                            {...register("classImage", { required: true, maxLength: 120 })}
+                            {...register("classImage", { required: true ,maxLength: 220})}
                             className="input input-bordered w-full " />
                     </div>
                     {/* seat*/}

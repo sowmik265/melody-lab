@@ -34,7 +34,7 @@ const PopularInstructors = () => {
                 className="mySwiper"
             >
                 {popular.map(ins =>
-                    <SwiperSlide>
+                    <SwiperSlide key={ins._id}>
                         <div className="card w-96 bg-base-100 shadow-xl h-full border border-yellow-300 border-b-8 mx-auto">
                             <figure className="px-10 pt-10">
                                 <img src={ins.image} alt="Shoes" className="rounded-xl image-full" />

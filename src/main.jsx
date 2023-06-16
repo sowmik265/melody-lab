@@ -64,10 +64,6 @@ const router = createBrowserRouter([
         path: 'classes',
         element: <PrivateRoute><Classes></Classes></PrivateRoute>
       },
-      {
-        path: 'myclasses',
-        element: <PrivateRoute><MyClasses></MyClasses></PrivateRoute>
-      }
     ]
   },
   {

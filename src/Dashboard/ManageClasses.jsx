@@ -45,9 +45,8 @@ const ManageClasses = () => {
     }
 
     const handleApprove = item => {
-        // console.log(user)
-        // console.log(users)
-        fetch(`http://localhost:5000/classes/${item._id}`, {
+
+        fetch(`https://melody-lab-server.vercel.app/classes/${item._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

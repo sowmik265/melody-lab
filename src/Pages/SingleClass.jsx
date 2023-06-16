@@ -19,7 +19,7 @@ const SingleClass = ({ name }) => {
 
         if (user && user.email) {
             const cartItem = { classId: _id, className, classImage, instructorName, price, email: user.email }
-            fetch('http://localhost:5000/carts', {
+            fetch('https://melody-lab-server.vercel.app/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

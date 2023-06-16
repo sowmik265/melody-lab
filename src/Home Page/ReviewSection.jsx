@@ -12,7 +12,7 @@ import SectionTile from '../Utilitites/SectionTile';
 const ReviewSection = () => {
     const [rating, setRating] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://melody-lab-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setRating(data));
 
@@ -37,7 +37,7 @@ const ReviewSection = () => {
                     modules={[Autoplay, Pagination, Navigation]}
                     className="mySwiper"
                 >
-                    {rating.map(rate => <SwiperSlide className=''>
+                    {rating.map(rate => <SwiperSlide key={rate._id} className=''>
                         <div className="flex flex-col items-center border-x-8 border-yellow-400 text-center rounded-3xl">
                             <img className='mb-1' src={'https://i.ibb.co/pf6Wx5h/icons8-romance.gif'}></img>
                             <Rating

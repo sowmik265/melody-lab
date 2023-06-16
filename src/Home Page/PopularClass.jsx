@@ -7,7 +7,7 @@ import SectionTile from '../Utilitites/SectionTile';
 const PopularClass = () => {
     const [classes, setClasses] = useState([]);
     useEffect(() => {
-        fetch('classes.json')
+        fetch('https://melody-lab-server.vercel.app/classes')
             .then(res => res.json())
             .then(data => setClasses(data))
     }, []);
@@ -17,10 +17,10 @@ const PopularClass = () => {
     return (
         <div>
             <SectionTile title={'our popular classes'}></SectionTile>
-            <div class="bg-gray-100 w-full gap-4 flex-wrap flex justify-center items-center mt-4 mb-4">
+            <div className="bg-gray-100 w-full gap-4 flex-wrap flex justify-center items-center mt-4 mb-4">
                 {
                     populars.map(popular =>
-                        <div className="w-full md:w-72 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+                        <div key={popular._id} className="w-full md:w-72 p-2 bg-white rounded-xl transform transition-all hover:-translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
 
                             <img className="h-40 object-cover rounded-xl mx-auto" src={popular.classImage} alt="" />
                             <div className="p-2">

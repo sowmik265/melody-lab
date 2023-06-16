@@ -1,5 +1,6 @@
 import React from 'react';
 import useEnrolled from '../hooks/useEnrolled';
+import SectionTile from '../Utilitites/SectionTile';
 
 const Enrolled = () => {
     const [payment] = useEnrolled();
@@ -15,6 +16,7 @@ const Enrolled = () => {
 
     return (
         <div className="w-full">
+            <SectionTile title={'My enrolled classes'}></SectionTile>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}

@@ -34,7 +34,6 @@ const NavBar = () => {
         <li className='font-extrabold'><ActiveLink to='/instructors'>INSTRUCTORS</ActiveLink></li>
         <li className='font-extrabold'><ActiveLink to='/classes'>CLASSES</ActiveLink></li>
         <li className='font-extrabold'><ActiveLink to='/dashboard'>DASHBOARD</ActiveLink></li>
-        <li className='font-extrabold'><ActiveLink to='/myclasses'>MY CLASSES</ActiveLink></li>
         {
             user ?
                 <>
