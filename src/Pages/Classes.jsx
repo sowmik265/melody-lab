@@ -15,7 +15,7 @@ const Classes = () => {
     const harmoniumClass = classes.filter(harmonium => harmonium.className === "harmonium");
 
     return (
-        <div>
+        <div className='pt-24'>
             <Helmet>
                 <title>Melody Lab | Home</title>
             </Helmet>

@@ -72,7 +72,7 @@ const SignIn = () => {
                 <title>Melody Lab | Log in</title>
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col md:flex-row-reverse">
+                <div className="hero-content flex-col md:flex-row-reverse mt-32">
 
                     {/* animation */}
                     <div className="text-center md:w-1/2">

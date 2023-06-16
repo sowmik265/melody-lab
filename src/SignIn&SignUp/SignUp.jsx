@@ -53,8 +53,8 @@ const SignUp = () => {
             <Helmet>
                 <title> Melody Lab | Register</title>
             </Helmet>
-            <div className="relative flex flex-col justify-center min-h-screen overflow-hidden mx-2">
-                <div className="w-full p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 mt-6 mx-auto">
+            <div className="relative flex flex-col justify-center min-h-screen overflow-hidden mx-2 pb-10">
+                <div className="w-full p-6 m-auto rounded-md shadow-xl lg:max-w-xl bg-rose-700 mt-32 pb-32 mx-auto">
                     <h1 className="text-3xl font-semibold text-center text-yellow-300 uppercase">
                         Register
                     </h1>

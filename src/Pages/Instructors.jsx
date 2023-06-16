@@ -15,17 +15,17 @@ const Instructors = () => {
     const drums = instructors.filter(drum => drum.instrument === "drums");
 
     return (
-        <div>
+        <div className=' pt-24'>
             <Helmet>
                 <title>Melody Lab | Instructors</title>
             </Helmet>
             {/* guitar */}
-            <div className='guitar mt-10'>
+            <div className='guitar pt-10'>
                 <AttentionSeeker>
-                    <h1 className='text-center uppercase text-4xl font-bold text-rose-700 '>our guitar instructors</h1>
+                    <h1 className='text-center uppercase text-4xl font-bold text-rose-700  '>our guitar instructors</h1>
                 </AttentionSeeker>
 
-                <div className='flex flex-wrap gap-5 justify-center p-8'>
+                <div className='flex flex-wrap gap-5 justify-center p-8 '>
                     {guitars.map(guitar =>
                         <div key={guitar._id} className="card card-compact md:w-72 bg-base-100 shadow-xl opacity-90 hover:opacity-100 focus:opacity-100 transition-opacity duration-300">
                             <figure><img src={guitar.image} alt="Shoes" /></figure>
