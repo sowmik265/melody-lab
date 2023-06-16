@@ -30,7 +30,6 @@ import ManageClasses from './Dashboard/ManageClasses.jsx';
 import InstructorHome from './Dashboard/InstructorHome.jsx';
 import Enrolled from './Dashboard/Enrolled.jsx';
 import History from './Dashboard/History.jsx';
-import MyClasses from './Pages/MyClasses.jsx';
 import AddClass from './Dashboard/AddClass.jsx';
 import Myclass from './Dashboard/Myclass.jsx';
 
@@ -40,7 +39,7 @@ const queryClient = new QueryClient();
 const router = createBrowserRouter([
   {
     path: "/",
-    // errorElement: <ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     element: <App></App>,
     children: [
       {

@@ -29,7 +29,7 @@ const PopularClass = () => {
 
                                 <p className="text-sm text-gray-600">Instructor : {popular.instructorName}</p>
                                 <p className="text-sm text-gray-600"> Email : {popular.email}</p>
-                
+
                                 <p className="text-sm text-gray-600"> Schedule : {popular.time}</p>
                             </div>
 
