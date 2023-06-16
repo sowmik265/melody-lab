@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import { Helmet } from 'react-helmet-async';
 
 const SignUp = () => {
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm();
     const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
 
@@ -106,6 +106,7 @@ const SignUp = () => {
                             />
                             {errors.email && <span className='text-yellow-300'>This field is required</span>}
                         </div>
+
                         <div className="mb-2">
                             <label
                                 for="password"
@@ -129,6 +130,35 @@ const SignUp = () => {
                             {errors.password?.type === 'maxLength' && <p className="text-yellow-300">Password must be less than 20 characters</p>}
                             {errors.password?.type === 'pattern' && <p className="text-yellow-300">Password must have one Uppercase one lower case, one number and one special character.</p>}
                         </div>
+
+                        <div className="mb-2">
+                            <label
+                                for="password"
+                                className="block text-sm font-semibold text-yellow-300"
+                            >
+                                Confirm Password
+                            </label>
+                            <input
+                                type="password"
+                                placeholder='Confirm your password'
+                                className="block w-full px-4 py-2 mt-2 text-rose-600 bg-white border rounded-md focus:border-yellow-400 focus:ring-yellow-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                                {...register("confirm_password", {
+                                    required: true,
+                                    validate: (val) => {
+                                        if (watch('password') !== val) {
+                                            return "Your passwords do not match";
+                                        }
+                                    },
+                                })}
+                            />
+
+                            {errors.confirm_password && (
+                                <span className="error text-yellow-300">{errors.confirm_password.message}</span>
+                            )}
+
+                        </div>
+
+
                         <div className="mt-6">
                             <button className="btn btn-outline btn-warning border-b-4 w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-rose-600 rounded-md hover:bg-yellow-300 focus:outline-none focus:bg-rose-600">
                                 Register

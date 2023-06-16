@@ -45,8 +45,8 @@ const Dashboard = () => {
                             isInstructor &&
                             <>
                                 <li><NavLink to="/dashboard/instructorhome"><img className='w-5 5-6' src="https://img.icons8.com/color/48/home--v1.png" alt="home--v1" /> Instructor Home</NavLink></li>
-                                <li><NavLink to="/dashboard/selectedclasses"><FaCalendarAlt></FaCalendarAlt>My Classes</NavLink></li>
-                                <li><NavLink to="/dashboard/addclass"><FaCalendarAlt></FaCalendarAlt> Add Class</NavLink></li>
+                                <li><NavLink to="/dashboard/myclass"><img className='w-5 5-6' src="https://img.icons8.com/dusk/64/class.png" alt="class" />My Classes</NavLink></li>
+                                <li><NavLink to="/dashboard/addclass"><img className='w-5 5-6' src="https://img.icons8.com/fluency/48/add.png" alt="add" /> Add Class</NavLink></li>
                             </>
                             ||
                             <>
